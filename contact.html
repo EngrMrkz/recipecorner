@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Filipino Recipe Corner to share your thoughts or ask any questions. We are here to help!">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the path is correct -->
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1>Filipino Recipe Corner</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+              <!--  <li><a href="#recipes">Recipes</a></li> -->
+                <li><a href="contact.html" id="contact-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Whether you have questions, feedback, or want to share a recipe, feel free to reach out.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <button id="contact-form-toggle">Open Contact Form</button>
+    
+        <div id="contact-form">
+            <h3>Get in Touch</h3>
+            <form action="/submit_form" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Optional script to toggle the contact form visibility -->
+    <script>
+        const contactFormToggle = document.getElementById('contact-form-toggle');
+        const contactForm = document.getElementById('contact-form');
+    
+        contactFormToggle.addEventListener('click', () => {
+            contactForm.style.display = contactForm.style.display === 'none' || contactForm.style.display === '' ? 'block' : 'none';
+        });
+    </script>
+    
+
+    <footer>
+        <p>&copy; 2024 Pinoy Kusina. All Rights Reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    </footer>
+    
+</body>
+</html>
