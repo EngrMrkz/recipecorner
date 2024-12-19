@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Filipino Recipe Logo" class="logo">
+            <h1>Filipino Recipe Corner</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="recipe">
+        <h2 id="recipe-title">Recipe Title</h2>
+        <div id="recipe-details">
+            <p id="recipe-description">Description of the recipe will appear here.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pinoy Kusina. All Rights Reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    </footer>
+
+    <script>
+        // Grab the category from the URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        // Set the recipe title and description based on the category
+        const recipeTitle = document.getElementById('recipe-title');
+        const recipeDescription = document.getElementById('recipe-description');
+        
+        if (category === 'adobo') {
+            recipeTitle.textContent = 'Adobo Recipe';
+            recipeDescription.innerHTML = `
+                <img src="images/adobo.jpg" alt="Adobo" class="recipe-image">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 kg chicken, cut into serving parts</li>
+                    <li>1/2 cup soy sauce</li>
+                    <li>1/2 cup vinegar</li>
+                    <li>4 cloves garlic, minced</li>
+                    <li>1 bay leaf</li>
+                    <li>1 tsp peppercorns</li>
+                    <li>1 cup water</li>
+                    <li>2 tbsp cooking oil</li>
+                    <li>Salt to taste</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Combine soy sauce, vinegar, garlic, bay leaf, and peppercorns in a bowl.</li>
+                    <li>Marinate the chicken for at least 30 minutes.</li>
+                    <li>Heat oil in a pan, and brown the chicken.</li>
+                    <li>Add the marinade and water, and simmer for 30 minutes or until chicken is tender.</li>
+                    <li>Season with salt, and serve with steamed rice.</li>
+                </ol>
+            `;
+        } else if (category === 'kakanin') {
+            recipeTitle.textContent = 'Kakanin Recipe';
+            recipeDescription.innerHTML = `
+                <img src="images/kakanin.jpg" alt="Kakanin" class="recipe-image">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 cup glutinous rice</li>
+                    <li>1 cup coconut milk</li>
+                    <li>1 cup sugar</li>
+                    <li>1/4 tsp salt</li>
+                    <li>Banana leaves for wrapping</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Soak the glutinous rice in water overnight.</li>
+                    <li>Drain the rice and mix it with coconut milk, sugar, and salt.</li>
+                    <li>Wrap the mixture in banana leaves and steam for 45 minutes to 1 hour.</li>
+                    <li>Serve warm and enjoy this delicious Filipino snack!</li>
+                </ol>
+            `;
+        } else if (category === 'sinigang') {
+            recipeTitle.textContent = 'Sinigang na Baboy Recipe';
+            recipeDescription.innerHTML = `
+                <img src="images/sinigang.jpg" alt="Sinigang" class="recipe-image">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 kg pork belly or ribs</li>
+                    <li>1 onion, quartered</li>
+                    <li>2 tomatoes, quartered</li>
+                    <li>1 packet sinigang mix</li>
+                    <li>Water (about 6 cups)</li>
+                    <li>1 cup kangkong (water spinach)</li>
+                    <li>1 cup labanos (radish), sliced</li>
+                    <li>2 long green chilies</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Boil the pork with onions, tomatoes, and water for 30 minutes or until tender.</li>
+                    <li>Add the sinigang mix and stir well.</li>
+                    <li>Put in the radish, kangkong, and green chilies. Simmer for 5 minutes.</li>
+                    <li>Season with salt to taste, and serve hot with steamed rice.</li>
+                </ol>
+            `;
+        } else if (category === 'halohalo') {
+            recipeTitle.textContent = 'Halo-Halo Recipe';
+            recipeDescription.innerHTML = `
+                <img src="images/halohalo.jpg" alt="Halo-Halo" class="recipe-image">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>Shaved ice</li>
+                    <li>1/4 cup sweetened beans (red mung, garbanzo, or kidney beans)</li>
+                    <li>1/4 cup sweetened jackfruit</li>
+                    <li>1/4 cup sweetened banana (saba)</li>
+                    <li>1 scoop ube ice cream</li>
+                    <li>Leche flan (caramel custard)</li>
+                    <li>Sweetened coconut strips</li>
+                    <li>Evaporated milk</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>In a glass, layer the sweetened beans, jackfruit, banana, and coconut strips.</li>
+                    <li>Add shaved ice to fill the glass.</li>
+                    <li>Top with a scoop of ube ice cream and leche flan.</li>
+                    <li>Pour evaporated milk on top, and mix well before enjoying!</li>
+                </ol>
+            `;
+        } else {
+            recipeTitle.textContent = 'Recipe Not Found';
+            recipeDescription.textContent = 'Sorry, we could not find a recipe for this category.';
+        }
+    </script>
+</body>
+</html>
